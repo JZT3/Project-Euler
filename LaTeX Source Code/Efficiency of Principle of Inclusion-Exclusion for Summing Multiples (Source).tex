@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\geometry{a4paper, margin=1in}
+
+\title{Efficiency of Principle of Inclusion-Exclusion for Summing Multiples}
+\author{Jervani Z. Thompson }
+\date{October 6 2023}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+This document provides an analysis of the efficiency of the Principle of Inclusion-Exclusion (PIE) in the context of summing multiples of given numbers below a certain limit. The PIE method is compared to the brute force approach, considering various efficiency criteria such as time complexity, space complexity, and ease of implementation.\\
+
+Problem Statement: \textit{"If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6, and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000."}\\
+
+The PIE method is compared to the brute force approach for solving this problem, considering various efficiency criteria such as time complexity, space complexity, and ease of implementation.
+
+\section*{Methods}
+\subsection*{Brute Force Method}
+\begin{description}[font=\normalfont,align=left]
+    \item[Approach:] Iterating through each number from 1 to \(n-1\), checking if it is a multiple of 3 or 5, and summing those that are.
+    \item[Time Complexity:] \(O(n)\) as it checks each number individually.
+    \item[Space Complexity:] \(O(1)\) as it only requires a variable to store the sum.
+    \item[Pros:] Simple and straightforward to implement.
+    \item[Cons:] Not efficient for large values of \(n\) due to linear time complexity.
+\end{description}
+
+\subsection*{Principle of Inclusion-Exclusion (PIE)}
+\begin{description}[font=\normalfont,align=left]
+    \item[Approach:] Calculate the sum of multiples of 3, sum of multiples of 5, and then subtract the sum of multiples of 15 using the arithmetic series formula and PIE.
+    \item[Time Complexity:] \(O(1)\) as it directly calculates the sums without iteration.
+    \item[Space Complexity:] \(O(1)\).
+    \item[Pros:] Highly efficient for large values of \(n\) due to constant time complexity.
+\end{description}
+\newpage
+
+Using a counting technique allows us to count the number of elements in the union of several sets, even when the sets are not disjoint. When applied to the problem of finding the sum of all multiples of 3 or 5 below 1000, PIE provides a method to calculate the answer directly without iterating over the numbers below 1000. This results in a time complexity of \(O(1)\) since the calculation involves a fixed number of operations that does not depend on the input size. 
+\begin{itemize}
+    \item \textbf{Calculate the sum of multiples of 3 below 1000:}
+    \[
+    \sum_{k=1}^{\left\lfloor\frac{999}{3}\right\rfloor} 3k = 3 \cdot \left\lfloor\frac{999}{3}\right\rfloor \cdot \frac{\left\lfloor\frac{999}{3}\right\rfloor + 1}{2}
+    \]
+    
+    \item \textbf{Calculate the sum of multiples of 5 below 1000:}
+    \[
+    \sum_{k=1}^{\left\lfloor\frac{999}{5}\right\rfloor} 5k = 5 \cdot \left\lfloor\frac{999}{5}\right\rfloor \cdot \frac{\left\lfloor\frac{999}{5}\right\rfloor + 1}{2}
+    \]
+    
+    \item \textbf{Subtract the sum of multiples of 15 (since they are counted twice):}
+    \[
+    \sum_{k=1}^{\left\lfloor\frac{999}{15}\right\rfloor} 15k = 15 \cdot \left\lfloor\frac{999}{15}\right\rfloor \cdot \frac{\left\lfloor\frac{999}{15}\right\rfloor + 1}{2}
+    \]
+    
+    \item \textbf{Combine the results:}
+    \[
+    \text{Result} = \text{Sum of multiples of 3} + \text{Sum of multiples of 5} - \text{Sum of multiples of 15}
+    \]
+    Each of these calculations involves a fixed number of arithmetic operations, so the time complexity is \(O(1)\). Regarding space complexity, since we are not using any additional data structures and are only storing a constant number of variables, the space complexity is also \(O(1)\).
+\end{itemize}
+
+
+\section*{Proof of Efficiency}
+By leveraging the arithmetic series sum and the Principle of Inclusion-Exclusion, PIE provides a computationally efficient approach to calculate the sum of multiples given its constant time complexity.
+
+\section*{Conclusion}
+In the context of summing multiples of numbers below a given limit, the Principle of Inclusion-Exclusion method is highly efficient and is likely one of the most efficient methods available. The term "most efficient" can be subjective and context-dependent, so it is essential to consider the specific constraints and requirements of the application at hand.
+
+
+\end{document}
