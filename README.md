@@ -8,15 +8,13 @@ This repository contains solutions to problems from [Project Euler](https://proj
 - `Python Solutions/`: Directory containing solutions written in Python.
 - `LaTeX Source Code/`: Directory containing LaTeX documents (along with PDFs for easier reading) with mathematical proofs for selected problems.
 
-## Getting Started
-
 ### Prerequisites
 - For C++ solutions: A C++ compiler (e.g., `g++`).
 - For Python solutions: Python 3.x.
 - For viewing proofs: A LaTeX editor or viewer (e.g., TeXShop, Overleaf).
 
 
-### **Acknowledgments**
+### Acknowledgments
 - Credits to Project Euler.
 - Shout out to my mentor @kevinburleigh75 for giving me this fun challange idea 
 
